@@ -1,0 +1,60 @@
+.actions {
+  display: flex;
+}
+
+.actionsTitles {
+  font-size: 14px;
+  color: #000;
+  list-style-type: none;
+  margin: 0;
+  margin-right: 18px;
+  padding: 0;
+}
+
+.actionsKeys {
+  font-size: 14px;
+  color: #777777;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.action {
+  position: relative;
+}
+.actionSpace::before {
+  content: "";
+  position: absolute;
+  top: 5.5px;
+  left: -12px;
+  width: 6px;
+  height: 6px;
+  background-color: #88bd35;
+  border-radius: 50%;
+}
+
+.actionDel::before {
+  content: "";
+  position: absolute;
+  top: 5.5px;
+  left: -12px;
+  width: 6px;
+  height: 6px;
+  background-color: #f7882e;
+  border-radius: 50%;
+}
+
+.actionShiftEnter::before {
+  content: "";
+  position: absolute;
+  top: 5.5px;
+  left: -12px;
+  width: 6px;
+  height: 6px;
+  background-color: #1764cc;
+  border-radius: 50%;
+}
