@@ -20,6 +20,16 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
+const clearProcessedAdsFile = () => {
+  fs.writeFile("./files/processedAds.json", "[]", err => {
+    if (err) {
+      console.error("Ошибка при очистке файла processedAds.json:", err);
+    } else {
+      console.log("Файл processedAds.json был успешно очищен.");
+    }
+  });
+};
+
 const isUniqAd = (ad, processedAds) => {
   return !processedAds.some(exitingAd => exitingAd.id === ad.id);
 };
@@ -82,6 +92,8 @@ app.post("/", (req, res) => {
     );
   });
 });
+
+clearProcessedAdsFile();
 
 app.listen(port, () => {
   console.log("work on " + port);
